@@ -40,6 +40,7 @@ In this project,
 <br />
 <br />
 <br />
+: <br/><br />
 <img src="https://i.imgur.com/JsgRKUz.png" alt="Homelab Steps">
 <br />
 <br />
@@ -75,6 +76,7 @@ In this project,
 <br />
 <br />
 <br />
+: <br/><br />
 <img src="https://i.imgur.com/Y2FcsIE.png" alt="Homelab Steps">
 <br />
 <br />
@@ -86,6 +88,111 @@ In this project,
 <br />
 : <br/><br />
 <img src="https://i.imgur.com/j7KhJ8i.png" alt="Homelab Steps">
+<br />
+<br />
+<br /> 
+: <br/><br />
+<img src="https://i.imgur.com/fi6CKLB.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
 <br />
 <br />
 <br />
