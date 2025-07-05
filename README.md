@@ -26,12 +26,81 @@ In this project,
 
 <p align="center">
 : <br/><br />
-<img src="https://i.imgur.com/kvJeEXx.png" alt="Homelab Steps">
+<img src="https://i.imgur.com/vPvZldE.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
 : <br/><br />
-<img src="https://raw.githubusercontent.com/rdooley2/Homelab/main/GIFs/Step1.gif" alt="Homelab Steps">
+<img src="https://i.imgur.com/wxVl0SU.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="https://i.imgur.com/jpKUmlh.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+<img src="https://i.imgur.com/JsgRKUz.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="https://i.imgur.com/DqMiPIg.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="https://i.imgur.com/tdbiygo.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="https://i.imgur.com/1oYINpt.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="https://i.imgur.com/ypHVddz.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="https://i.imgur.com/XhTcBB3.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="https://i.imgur.com/VnT4YHp.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+<br />
+<img src="https://i.imgur.com/Y2FcsIE.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="https://i.imgur.com/I1gs3dH.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="https://i.imgur.com/j7KhJ8i.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
+<br />
+<br />
+<br />
+: <br/><br />
+<img src="" alt="Homelab Steps">
 <br />
 <br />
 <br />
