@@ -26,12 +26,12 @@ In this project,
 
 <p align="center">
 : <br/><br />
-<img src="https://i.imgur.com/xR691To.png" height="80%" width="80%" alt="Homelab Steps"/>
+<img src="https://i.imgur.com/kvJeEXx.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
 : <br/><br />
-<img src="https://i.imgur.com/uRv9hSe.png" height="80%" width="80%" alt="Homelab Steps"/>
+<img src="https://raw.githubusercontent.com/rdooley2/Homelab/main/GIFs/Step1.gif" alt="Homelab Steps">
 <br />
 <br />
 <br />
