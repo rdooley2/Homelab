@@ -45,7 +45,7 @@ In this project,
 <br />
 <br />
 : <br/><br />
-<img src="https://i.imgur.com/DqMiPIg.png" alt="Homelab Steps">
+<img src="https://i.imgur.com/Y9FMSOn.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
