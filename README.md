@@ -280,12 +280,12 @@ In this project,
 <br />
 <br />
 : <br/><br />
-<img src="https://i.imgur.com/RHKN79G.png" alt="Homelab Steps">
+<img src="https://i.imgur.com/962a9HW.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
 : <br/><br />
-<img src="https://i.imgur.com/962a9HW.png" alt="Homelab Steps">
+<img src="https://i.imgur.com/RHKN79G.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
@@ -310,17 +310,17 @@ In this project,
 <br />
 <br />
 : <br/><br />
-<img src="" alt="Homelab Steps">
+<img src="https://i.imgur.com/cEdRnxD.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
 : <br/><br />
-<img src="" alt="Homelab Steps">
+<img src="https://i.imgur.com/Q9kYNCD.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
 : <br/><br />
-<img src="" alt="Homelab Steps">
+<img src="https://i.imgur.com/u8FuvAG.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
