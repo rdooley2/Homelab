@@ -66,7 +66,7 @@ Here I wanted to create a Firewall Group that I could apply to all four VMs. I s
 <br />
 <br />
 After naming the group, I added all of these inbound rules. In short, port 22 allows me to SSH into any of the machines, port 389 will allow Active Directory to communicate with Shuffle, ports 1514 and 1515 will allow the Wazuh agent to communicate to the Wazuh VM, port 3389 allows for Remote Desktop Connection into any VM, port 8000 allows for Splunk to display the GUI, and port 9997 is the port for Splunk indexing and recieving: <br/><br />
-<img src="https://i.imgur.com/XhTcBB3.png" alt="Homelab Steps">
+<img src="https://i.imgur.com/iPGMyn4.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
