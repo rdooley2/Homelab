@@ -30,7 +30,7 @@ In this project,
 <br />
 <br />
 <br />
-First I navigated to Vultr's website and registered for a new account. Once doing so I was given $300 worth of credit for free to use for my project. From here I went to the products tab and clicked deploy server: <br/><br />
+First I navigated to Vultr's website and registered for a new account. Once doing so I was given $300 worth of credit for free to use for my project. The first step in the project was to initialize the VMs, so I went to the products tab and clicked deploy server: <br/><br />
 <img src="https://i.imgur.com/wxVl0SU.png" alt="Homelab Steps">
 <br />
 <br />
