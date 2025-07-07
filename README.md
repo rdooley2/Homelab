@@ -325,12 +325,12 @@ In this project,
 <br />
 <br />
 : <br/><br />
-<img src="" alt="Homelab Steps">
+<img src="https://i.imgur.com/ceRCjkX.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
 : <br/><br />
-<img src="" alt="Homelab Steps">
+<img src="https://i.imgur.com/mL55pOi.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
