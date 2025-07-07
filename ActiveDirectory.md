@@ -1,10 +1,10 @@
 <p align="center">
-Next, I went into the Domain Controller VM: <br/><br />
+The next step of the project was to set up Active Directory. To do this I first went into the Domain Controller VM: <br/><br />
 <img src="https://i.imgur.com/58rEzxr.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-Once logged in, the VM automatically opens Server Manager. Here I want to install Active Directory. I started the prcoess by clicking add roles and features: <br/><br />
+Once logged in, the VM automatically opened Server Manager. Here I want to install Active Directory. I started the prcoess by clicking add roles and features: <br/><br />
 <img src="https://i.imgur.com/VGNRKLW.png" alt="Homelab Steps">
 <br />
 <br />
