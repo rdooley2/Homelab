@@ -127,5 +127,5 @@ Here I pinged the DC, Client, and Wazuh/Suricata VMs to ensure they could commun
 <br />
 <br />
 This was all for initializing the VMs. The project documentation is continued in the Active Directory Steps: <br/><br />
- https://github.com/rdooley2/Homelab/blob/main/ActiveDirectory.md
+https://github.com/rdooley2/Homelab/blob/main/ActiveDirectory.md
 
