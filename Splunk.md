@@ -69,43 +69,43 @@ Next I wanted to install an app. I did this by first clicking on the app tab in 
 <br />
 <br />
 <br />
-Next, I searched up the app that I wanted, the app being Splunk Add-on for Microsoft Windows: <br/><br />
+Next, I searched up the app that I wanted, the app being Splunk Add-on for Microsoft Windows. This app will allow me to use many useful fields when I create alerts later on: <br/><br />
 <img src="https://i.imgur.com/5QC48ou.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/4ceDYop.png" alt="Homelab Steps">
+It then prompted me to login before installing. Once I did so I let it install and then closed out the prompt: <br/><br />
+<img src="https://i.imgur.com/FTIgc9S.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/S4hKmP8.png" alt="Homelab Steps">
+I then clicked settings, in the top right, and selected indexes: <br/><br />
+<img src="https://i.imgur.com/LuOkxoy.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/EDXLTYa.png" alt="Homelab Steps">
+Then I clicked new index and named it dooley-ad. This index will allow me to identify any event that comes from the Client and DC VMs: <br/><br />
+<img src="https://i.imgur.com/yybvY6a.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/SD1476V.png" alt="Homelab Steps">
+Next, I clicked settings and selected forwarding and receiving: <br/><br />
+<img src="https://i.imgur.com/LtH4oqT.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/bPrHGer.png" alt="Homelab Steps">
+From here, I clicked configure receiving. Setting up recieving will allow Splunk Enterprise to recieve the information from the othe VMs: <br/><br />
+<img src="https://i.imgur.com/Y5b3JXv.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/LSdETxb.png" alt="Homelab Steps">
+Then, I clicked new recieving port: <br/><br />
+<img src="https://i.imgur.com/zlIBwF6.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/houlKrL.png" alt="Homelab Steps">
+Finally, I typed in port 9997 as the receiving port and clicked save: <br/><br />
+<img src="https://i.imgur.com/EhALGSB.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
@@ -114,93 +114,113 @@ Next, I searched up the app that I wanted, the app being Splunk Add-on for Micro
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/79Tp6EA.png" alt="Homelab Steps">
+The next step was to install the Splunk Universal Forwarder on the Client VM. I went back to Splunk's website, clicked trials & downloads, then selected the universal forwarder: <br/><br />
+<img src="https://i.imgur.com/1LQY8W6.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/2XGXlwa.png" alt="Homelab Steps">
+Then I grabbed the download command for the Windows Server 2022 version: <br/><br />
+<img src="https://i.imgur.com/FTlszwm.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/6SMAaPR.png" alt="Homelab Steps">
+After switching over to the Client VM, I was able to paste the command in the command line. Once it installed, I ran the exe: <br/><br />
+<img src="https://i.imgur.com/2swd35N.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/UMlGjQh.png" alt="Homelab Steps">
+First, I select an on-premises Splunk Enterprise instance and click next: <br/><br />
+<img src="https://i.imgur.com/v2mjwTa.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/12roRk0.png" alt="Homelab Steps">
+Next, I set up a username and password for the administrator account: <br/><br />
+<img src="https://i.imgur.com/9Hcn5r3.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/j78hGpY.png" alt="Homelab Steps">
+I continued to click next until it asked me to set up the recieving IP. For this I just entered the Private IP of the Splunk VM on port 9997: <br/><br />
+<img src="https://i.imgur.com/eb1Rjek.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/otaqz2V.png" alt="Homelab Steps">
+Once that was done I clicked install: <br/><br />
+<img src="https://i.imgur.com/YOxpSGG.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/tg9VHyK.png" alt="Homelab Steps">
+It then prompts me for the Domain Controller Credentials: <br/><br />
+<img src="https://i.imgur.com/bME8J5x.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/NJOHlBw.png" alt="Homelab Steps">
+After all of that, the installation was finished and I went ahead and clicked the finish button: <br/><br />
+<img src="https://i.imgur.com/ckKinJA.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/hRvk2wm.png" alt="Homelab Steps">
+Next I had to configure a few things. I started by entering the C:/Program Files/SplunkUniversalForwarder/etc/system/default folder and copying the inputs.conf file: <br/><br />
+<img src="https://i.imgur.com/Xh0wl1W.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/fZo4PDH.png" alt="Homelab Steps">
+Then, I pasted the inputs.conf file into the C:/Program Files/SplunkUniversalForwarder/etc/system/local folder: <br/><br />
+<img src="https://i.imgur.com/D8bnGps.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/m0Arr3G.png" alt="Homelab Steps">
+Next, I needed to edit the inputs.conf file that I had just created. I did so by running notepad as administrator: <br/><br />
+<img src="https://i.imgur.com/crvWcMz.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/MlWo0I5.png" alt="Homelab Steps">
+At the bottom of the file, I added these three lines. Essentially, these lines tell the forwarder to collect windows security events and file them under the dooley-ad index: <br/><br />
+<img src="https://i.imgur.com/V2iN5QJ.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/OoDfgoh.png" alt="Homelab Steps">
+After this, I opened up Services as the administrator: <br/><br />
+<img src="https://i.imgur.com/yifqLSf.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/4BdPB2n.png" alt="Homelab Steps">
+Within the Services application, I double-clicked the SplunkForwarder, clicked the log on tab, and selected the local system option: <br/><br />
+<img src="https://i.imgur.com/TPj2OOE.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/3QRzMIV.png" alt="Homelab Steps">
+After making that change, I right-clicked the SplunkForwarder and restarted it: <br/><br />
+<img src="https://i.imgur.com/oAveVXQ.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/mavBBnu.png" alt="Homelab Steps">
+Switching back to the Splunk Enterprise page, I clicked apps in the top left, and then selected search & reporting: <br/><br />
+<img src="https://i.imgur.com/rpLM8QK.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="https://i.imgur.com/4P9S9Cr.png" alt="Homelab Steps">
+By searching for index="dooley-ad" in the search bar, I was able to confirm that logs were being forwarded correctly: <br/><br />
+<img src="https://i.imgur.com/BYKxAyV.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+In addition, by clicking the ComputerName field in the left column, I could confirm that logs were coming from both VMs: <br/><br />
+<img src="https://i.imgur.com/VNq1gRl.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+Next, I wanted to craft an alert. Essentially, this alert looks within the dooley-ad index for event 4624 (Successful Logon). It then filters out all logon types except 7 and 10.Type 7 is when a user has unlocked the workstation and Type 10 is when the logon was from Remote Desktop Protocol. The alert then filters out any events that have unspecified address or internal IPs. Finally, the alert summarizes the filtered data by grouping and counting events using the specified fields : <br/><br />
+<img src="https://i.imgur.com/qKrv9Kt.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+Once I had made the alert, I clicked save as alert in the right corner: <br/><br />
+<img src="https://i.imgur.com/LyT49eh.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+I went ahead and named the alert something that would be obvious Then, I configured the alert to run every minute and had it get added to triggered alerts every time it was detected. Adding it to the triggered alerts was used later in the project to configure Shuffle: <br/><br />
+<img src="https://i.imgur.com/JW7GSOq.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
