@@ -54,7 +54,7 @@ I repeated this process two other times, making three groups in total: <br/><br 
 <br />
 <br />
 <br />
-Next I wanted to create the users. I did so by right clicking and selecting user. : <br/><br />
+Next I wanted to create the users. I did so by right clicking and selecting user: <br/><br />
 <img src="https://i.imgur.com/b0FiPkY.png" alt="Homelab Steps">
 <br />
 <br />
