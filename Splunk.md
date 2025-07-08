@@ -109,11 +109,6 @@ Finally, I typed in port 9997 as the receiving port and clicked save: <br/><br /
 <br />
 <br />
 <br />
-: <br/><br />
-<img src="" alt="Homelab Steps">
-<br />
-<br />
-<br />
 The next step was to install the Splunk Universal Forwarder on the Client VM. I went back to Splunk's website, clicked trials & downloads, then selected the universal forwarder: <br/><br />
 <img src="https://i.imgur.com/1LQY8W6.png" alt="Homelab Steps">
 <br />
@@ -149,7 +144,7 @@ Once that was done I clicked install: <br/><br />
 <br />
 <br />
 <br />
-It then prompts me for the Domain Controller Credentials: <br/><br />
+It then prompted me for the Domain Controller Credentials: <br/><br />
 <img src="https://i.imgur.com/bME8J5x.png" alt="Homelab Steps">
 <br />
 <br />
@@ -159,7 +154,7 @@ After all of that, the installation was finished and I went ahead and clicked th
 <br />
 <br />
 <br />
-Next I had to configure a few things. I started by entering the C:/Program Files/SplunkUniversalForwarder/etc/system/default folder and copying the inputs.conf file: <br/><br />
+Next I had to configure a few things. I started by entering the C:/Program Files/SplunkUniversalForwarder/etc/system/default folder and copied the inputs.conf file: <br/><br />
 <img src="https://i.imgur.com/Xh0wl1W.png" alt="Homelab Steps">
 <br />
 <br />
@@ -189,7 +184,7 @@ Within the Services application, I double-clicked the SplunkForwarder, clicked t
 <br />
 <br />
 <br />
-After making that change, I right-clicked the SplunkForwarder and restarted it: <br/><br />
+After making that change, I right-clicked the SplunkForwarder and restarted it. I then repeated the entire process of installing and configuring the Splunk Universal Forwarder on the Domain Controller VM: <br/><br />
 <img src="https://i.imgur.com/oAveVXQ.png" alt="Homelab Steps">
 <br />
 <br />
@@ -209,7 +204,7 @@ In addition, by clicking the ComputerName field in the left column, I could conf
 <br />
 <br />
 <br />
-Next, I wanted to craft an alert. Essentially, this alert looks within the dooley-ad index for event 4624 (Successful Logon). It then filters out all logon types except 7 and 10.Type 7 is when a user has unlocked the workstation and Type 10 is when the logon was from Remote Desktop Protocol. The alert then filters out any events that have unspecified address or internal IPs. Finally, the alert summarizes the filtered data by grouping and counting events using the specified fields : <br/><br />
+Next, I wanted to craft an alert. Essentially, this alert looks within the dooley-ad index for event 4624 (Successful Logon). It then filters out all logon types except 7 and 10. Type 7 is when a user has unlocked the workstation and Type 10 is when the logon was from Remote Desktop Protocol. The alert then filters out any events that have unspecified address or internal IPs. Finally, the alert summarizes the filtered data by grouping and counting events using the specified fields: <br/><br />
 <img src="https://i.imgur.com/qKrv9Kt.png" alt="Homelab Steps">
 <br />
 <br />
@@ -219,7 +214,7 @@ Once I had made the alert, I clicked save as alert in the right corner: <br/><br
 <br />
 <br />
 <br />
-I went ahead and named the alert something that would be obvious Then, I configured the alert to run every minute and had it get added to triggered alerts every time it was detected. Adding it to the triggered alerts was used later in the project to configure Shuffle: <br/><br />
+I went ahead and named the alert something that would be obvious. Then, I configured the alert to run every minute and had it get added to triggered alerts every time it was detected. Adding it to the triggered alerts was used later in the project to configure Shuffle: <br/><br />
 <img src="https://i.imgur.com/JW7GSOq.png" alt="Homelab Steps">
 <br />
 <br />
