@@ -29,7 +29,7 @@ Once that was done, I downloaded the Wazuh Agent installer for Windows from this
 <br />
 <br />
 <br />
-After it downloaded, I navigated to the Client Vm where I wanted to install the agent: <br/><br />
+After it downloaded, I navigated to the Client VM where I wanted to install the agent: <br/><br />
 <img src="https://i.imgur.com/83GVdpg.png" alt="Homelab Steps">
 <br />
 <br />
@@ -89,8 +89,9 @@ Going back to the SSH instance of the Wazuh-Suricata VM, I needed to set up the 
 <br />
 <br />
 <br />
-Next I created the inputs.conf in the /opt/splunkforwarder/etc/system/local/ folder, similar to when I set up the forwarder on the other two VMs, and added the following lines. Essentially it tells Splunk to watch and forward all data from the file at that file path since that is where all detected Wazuh events are kept. It then tells Splunk to categorize those events under the correct index, host, and sourcetype : <br/><br />
-<img src="https://i.imgur.com/lrX8Gsm.png" alt="Homelab Steps">
+Next I created the inputs.conf in the /opt/splunkforwarder/etc/system/local/ folder, similar to when I set up the forwarder on the other two VMs, and added the following lines. Essentially it tells Splunk to watch and forward all data from the alerts.json file at that file path since that is where all detected Wazuh events are kept. It then tells Splunk to categorize those events under the correct index, host, and sourcetype: <br/><br />
+<img src="https://i.imgur.com/lrX8Gsm.png" alt="Homelab Steps" height="50%" width="50%">
+<br />
 <img src="https://i.imgur.com/SYrC3Dq.png" alt="Homelab Steps">
 <br />
 <br />
@@ -125,7 +126,7 @@ I was able to confirm that those changes were caught and displayed in the Wazuh 
 <br />
 <br />
 <br />
-Back in Splunk Enterprise, I created an query for all events from Wazuh that contained the word files and had the words added or deleted. This is because all changes are categorized as added or deleted in the event log. If I did not specify "added" or "deleted", the query would pull other detected events from the FIM. The query is designed to pull the event time, full log (log description), and the agent the event is from: <br/><br />
+Back in Splunk Enterprise, I created a query for all events from Wazuh that contained the word files and had the words added or deleted. This is because all file specific changes are categorized as added or deleted by the FIM. If I did not specify "added" or "deleted", the query would pull other detected events from the FIM. This query is designed to pull the event time, full log (log description), and the agent the event is from: <br/><br />
 <img src="https://i.imgur.com/P3cKIQa.png" alt="Homelab Steps">
 <br />
 <br />
