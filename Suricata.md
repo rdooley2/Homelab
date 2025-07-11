@@ -24,7 +24,6 @@ ufw allow 3389
 ufw allow 8000
 ufw allow 9997
 </pre>
-</pre>
 <p align="center">
 Next I wanted to enable IP Forwarding. First, I ran these commands:
 <pre>
