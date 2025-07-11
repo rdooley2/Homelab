@@ -4,7 +4,7 @@ The first thing that I did was create a new VM for Suricata to run on. I realize
 <br />
 <br />
 <br />  
-These are the specifications that I used for the Suricata VM, It is the exact same as the Wazuh-Suricata VM (which I renamed to Wazuh VM): <br/><br />
+These are the specifications that I used for the Suricata VM. It is the exact same as the Wazuh-Suricata VM (which I renamed to Wazuh VM): <br/><br />
 <img src="https://i.imgur.com/02bl9m7.png" alt="Homelab Steps">
 <br />
 <br />
@@ -26,7 +26,7 @@ ufw allow 9997
 </pre>
 </pre>
 <p align="center">
-Next I wanted to enable IP Forwarding. This makes sure all inbound and outbound traffic run through the Suricata VM before reaching its destination. First, I ran these commands:
+Next I wanted to enable IP Forwarding. First, I ran these commands:
 <pre>
 vi /etc/sysctl.conf                                     #Edit configuration file
 Uncomment "net.ipv4.ip_forward = 1" line                #This variable allows IP Forwarding 
@@ -55,22 +55,22 @@ sudo netfilter-persistent save
 <br />
 <p align="center">
 Switching over to the Client, I went to network status and changed the default gateway for the private ethernet instance equal to the private IP of the Suricata VM: <br/><br />
-<img src="https://i.imgur.com/ZSWGaD1.png" alt="Homelab Steps">
+<img src="https://i.imgur.com/FaKBJoV.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-Additionally, I disabled IPv4 completely within the settings of the public ethernet instance. This will ensure that traffic has no other choice but to run through the Suricata VM: <br/><br />
+Additionally, I disabled IPv4 completely within the settings of the public ethernet instance. This means the only inbound traffic the Client recieves is in response to a previous outbound request. Additionally, it forces all outbound traffic to run through the Suricata VM before reaching its destination. This way, all traffic can be monitored by Suricata.: <br/><br />
 <img src="https://i.imgur.com/CN5knZr.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
 To test these changes, I ran the trace route command in the Client CLI. The results showed the traffic going through the Suricata VM (10.1.96.7) first before reaching the destination. I repeated these same steps for the DC VM: <br/><br />
-<img src="https://i.imgur.com/CN5knZr.png" alt="Homelab Steps">
+<img src="https://i.imgur.com/y4PVUhc.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
 <p align="center">
-The next step was to download the Wazuh agent and configure it. These commands come straight from their Linux agent installation guide:
+Going back to the Suricata VM, the next step was to download the Wazuh agent and configure it. These commands come straight from their Linux agent installation guide:
 <pre>
 curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import && chmod 644 /usr/share/keyrings/wazuh.gpg         #Installs the GPG key
 echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list                                          #Adds the Wazuh Repository
