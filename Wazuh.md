@@ -86,7 +86,7 @@ dpkg -i splunkforwarder.deb                                                     
 <br />
 For the next step, I ran this command in order to tell the forwarder where the information should be sent: <br/><br />
 <pre>
-/opt/splunkforwarder/bin/splunk add forward-server 10.1.96.5:9997  #Adds the Splunk Enterprise IP into the Splunk Forwarder Configuration
+/opt/splunkforwarder/bin/splunk add forward-server 10.1.96.5:9997         #Adds the Splunk Enterprise IP into the Splunk Forwarder Configuration
 </pre>
 <p align="center">
 <br /> 
