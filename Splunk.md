@@ -44,10 +44,15 @@ Once everything had finished running, the script gave me the URL for the Splunk 
 <br />
 <br />
 <br />
-I had to go in and set each port that I wanted to use as allowed for the firewall: <br/><br />
-<img src="https://i.imgur.com/b0rJqGZ.png" alt="Homelab Steps">
-<br />
-<br />
+I had to go in and set each port that I wanted to use as allowed for the firewall. These are the commands that I ran: <br/><br />
+<pre>
+ufw allow 22
+ufw allow 1514
+ufw allow 1515
+ufw allow 8000
+ufw allow 9997
+</pre>
+<p align="center">
 <br />
 When entering the Splunk IP address followed by :8000, I was able to access Splunk Enterprise. First I had to login using the username and password I had previously created: <br/><br />
 <img src="https://i.imgur.com/0fZSaBc.png" alt="Homelab Steps">
