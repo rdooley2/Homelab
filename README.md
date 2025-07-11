@@ -26,7 +26,7 @@ I used Vultr to create my own Homelab and simulate attacks. This project aimed t
 
 <p align="center">
 : <br/><br />
-<img src="https://i.imgur.com/MwNYXEZ.png" alt="Homelab Steps">
+<img src="https://i.imgur.com/Byrxdd4.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
