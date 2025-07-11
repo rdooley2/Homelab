@@ -1,26 +1,9 @@
 <p align="center">
-The first thing that I did was create a new VM for Suricata to run on. I realized that Suricata only integrates with Wazuh through the Wazuh agent. Essentially, I could install an agent on the new VM and have Suricata send the agent its logs. While I didn't initlally didn't plan for this, it makes more sense to do it this way. Here is the updated network diagram:<br/><br />
-<img src="" alt="Homelab Steps">
-<br />
-<br />
-<br />  
-These are the specifications that I used for the Suricata VM. It is the exact same as the Wazuh-Suricata VM (which I renamed to Wazuh VM): <br/><br />
-<img src="https://i.imgur.com/02bl9m7.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
-After the new VM initialized I enabled the firewall and VPC network for it. Once that was done, I recorded the new public and private IP: <br/><br />
-<img src="https://i.imgur.com/7U3siyU.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
-After using SSH to get into the machine, I ran these commands to allow each port in the firewall:
+The next part of the project was to set up Suricata. After using SSH to get into the machine, I ran these commands to allow each port in the firewall:
 <pre>
 ufw allow 22
-ufw allow 443
 ufw allow 1514
 ufw allow 1515
-ufw allow 8000
 ufw allow 9997
 </pre>
 <p align="center">
