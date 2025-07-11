@@ -209,18 +209,13 @@ In addition, by clicking the ComputerName field in the left column, I could conf
 <br />
 <br />
 <br />
-Next, I wanted to craft an alert. Essentially, this alert looks within the dooley-ad index for event 4624 (Successful Logon). It then filters out all logon types except 7 and 10. Type 7 is when a user has unlocked the workstation and Type 10 is when the logon was from Remote Desktop Protocol. The alert then filters out any events that have unspecified address or internal IPs. Finally, the alert summarizes the filtered data by grouping and counting events using the specified fields: <br/><br />
-<img src="https://i.imgur.com/qKrv9Kt.png" alt="Homelab Steps">
+Next, I wanted to craft an alert. Essentially, this alert looks within the dooley-ad index for event 4625 (Failed Logon) on the Client machine. The second line adjusts the event count by setting a range of five minutes. The third line displays the count, account name, and time of event. Finally, the last line determines how many times the event has to happen before being triggered. Basically, if someone unsuccessfully logs into their machine more than three times within five minutes, this will trigger an alert for suspicious activity: <br/><br />
+<img src="https://i.imgur.com/345QJAZ.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-Once I had made the alert, I clicked save as alert in the right corner: <br/><br />
-<img src="https://i.imgur.com/LyT49eh.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
-I went ahead and named the alert something that would be obvious. Then, I configured the alert to run every minute and had it get added to triggered alerts every time it was detected. Adding it to the triggered alerts was used later in the project to configure Shuffle: <br/><br />
-<img src="https://i.imgur.com/JW7GSOq.png" alt="Homelab Steps">
+Once I had made the alert, I clicked save as alert in the top right corner. I went ahead and named the alert something that would be obvious. Then, I configured the alert to run every minute and had it get added to triggered alerts every time it was detected. Adding it to the triggered alerts was used later in the project to configure Shuffle: <br/><br />
+<img src="https://i.imgur.com/7L8yJhn.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
