@@ -17,10 +17,9 @@ After the new VM initialized I enabled the firewall and VPC network for it. Once
 After using SSH to get into the machine, I ran these commands to allow each port in the firewall:
 <pre>
 ufw allow 22
-ufw allow 389
+ufw allow 443
 ufw allow 1514
 ufw allow 1515
-ufw allow 3389
 ufw allow 8000
 ufw allow 9997
 </pre>
