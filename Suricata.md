@@ -52,6 +52,23 @@ For these changes to apply after restart, I ran these commands to download a mod
 sudo apt install iptables-persistent 
 sudo netfilter-persistent save 
 </pre>
+<br />
+<p align="center">
+Switching over to the Client, I went to network status and changed the default gateway for the private ethernet instance equal to the private IP of the Suricata VM: <br/><br />
+<img src="https://i.imgur.com/ZSWGaD1.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+Additionally, I disabled IPv4 completely within the settings of the public ethernet instance. This will ensure that traffic has no other choice but to run through the Suricata VM: <br/><br />
+<img src="https://i.imgur.com/CN5knZr.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
+To test these changes, I ran the trace route command in the Client CLI. The results showed the traffic going through the Suricata VM (10.1.96.7) first before reaching the destination. I repeated these same steps for the DC VM: <br/><br />
+<img src="https://i.imgur.com/CN5knZr.png" alt="Homelab Steps">
+<br />
+<br />
+<br />
 <p align="center">
 The next step was to download the Wazuh agent and configure it. These commands come straight from their Linux agent installation guide:
 <pre>
