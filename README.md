@@ -12,7 +12,7 @@ I used Vultr to create my own Homelab and simulate attacks. This project aimed t
 </ul>
 
 <h2>Summary</h2>
-In this project, 
+
 
 <h2>Languages and Utilities Used</h2>
 
@@ -20,13 +20,13 @@ In this project,
 
 <h2>Environments Used </h2>
 
-- <b>Vultr</b>
+- <b></b>
 
 <h2>Project walk-through:</h2>
 
 <p align="center">
 : <br/><br />
-<img src="" alt="Homelab Steps">
+<img src="https://i.imgur.com/MwNYXEZ.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
