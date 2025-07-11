@@ -1,35 +1,27 @@
 <p align="center">
-The next part of the project was to set up Wazuh. First, I used SSH to get into the Wazuh-Suricata VM and then I ran apt update and apt upgrade: <br/><br />
-<img src="https://i.imgur.com/p6N5JsP.png" alt="Homelab Steps">
+The next part of the project was to set up Wazuh. First, I used SSH to get into the Wazuh VM and then I these commands to update packages. After the updates installed, I rebooted the effected services: <br/><br />
+<pre>
+apt update && apt upgrade
+</pre>
 <br />
-<br />
-<br />
-After the updates installed, I rebooted the select services: <br/><br />
-<img src="https://i.imgur.com/UzGmLls.png" alt="Homelab Steps">
-<br />
-<br />
+<p align="center">
+Next, I had to go in and set each port that I wanted to use as allowed for the firewall. These are the commands that I ran: <br/><br />
+<pre>
+ufw allow 22
+ufw allow 443
+ufw allow 1514
+ufw allow 1515
+ufw allow 9997
+</pre>
+<p align="center">
 <br />
 Next, I installed Wazuh using this command. The command comes straight from Wazuh's quickstart guide online. Once it installed, it gave me the URL and port extension to access the Wazuh web interface: <br/><br />
-<img src="https://i.imgur.com/uw5HAY8.png" alt="Homelab Steps">
+<pre>
+curl -sO https://packages.wazuh.com/4.12/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
+</pre>
 <br />
-<br />
-<br />
-I hadn't accounted for using port 443 in my research before starting the project, so I had to go back to the firewall settings on the Vultr website and add that specific port: <br/><br />
-<img src="https://i.imgur.com/L227nOF.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
-Back inside the SSH instance, I ran the following commands to allow the ports I had specified before: <br/><br />
-<img src="https://i.imgur.com/ZJwShL4.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
-Once that was done, I downloaded the Wazuh Agent installer for Windows from this page: <br/><br />
-<img src="https://i.imgur.com/ZjqTB1n.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
-After it downloaded, I navigated to the Client VM where I wanted to install the agent: <br/><br />
+<p align="center">
+Once that was done, I downloaded the Wazuh Agent installer from Wazuh's website. After it downloaded, I navigated to the Client VM where I wanted to install the agent: <br/><br />
 <img src="https://i.imgur.com/83GVdpg.png" alt="Homelab Steps">
 <br />
 <br />
@@ -44,7 +36,7 @@ When the installer finished, I clicked this button to open the configuration scr
 <br />
 <br />
 <br />
-On this screen, I specified the Private IP of the Wazuh-Suricata VM so that the agent knows where to communicate: <br/><br />
+On this screen, I specified the Private IP of the Wazuh VM so that the agent knows where to communicate: <br/><br />
 <img src="https://i.imgur.com/60qqnWk.png" alt="Homelab Steps">
 <br />
 <br />
@@ -84,22 +76,33 @@ This time I named the index wazuh-alerts so that I could differentiate between w
 <br />
 <br />
 <br />
-Going back to the SSH instance of the Wazuh-Suricata VM, I needed to set up the Splunk Forwarder. I ran this wget command to grab the .deb file, then I depackaged it, and finally I accepted the license. I will mention there was another step that I took after these three commands that I forgot to screenshot. In this step, I ran the command "/opt/splunkforwarder/bin/splunk add forward-server 10.1.96.5:9997" in order to tell the forwarder where the information should be sent: <br/><br />
-<img src="https://i.imgur.com/idnXD8L.png" alt="Homelab Steps">
+Going back to the SSH instance of the Wazuh VM, I needed to set up the Splunk Forwarder. I ran these commands to do so: <br/><br />
+<pre>
+wget -O splunkforwarder.deb "https://download.splunk.com/products/universalforwarder/releases/9.1.1/linux/splunkforwarder-9.1.1-64e843ea36b1-linux-2.6-amd64.deb"       #Download the Forwarder
+dpkg -i splunkforwarder.deb                                                                                                                                             #Depackage the Forwarder
+/opt/splunkforwarder/bin/splunk start --accept-license                                                                                                                  #Start installation and accept license
+</pre>
+<p align="center">
 <br />
-<br />
-<br />
-Next I created the inputs.conf in the /opt/splunkforwarder/etc/system/local/ folder, similar to when I set up the forwarder on the other two VMs, and added the following lines. Essentially it tells Splunk to watch and forward all data from the alerts.json file at that file path since that is where all detected Wazuh events are kept. It then tells Splunk to categorize those events under the correct index, host, and sourcetype: <br/><br />
-<img src="https://i.imgur.com/lrX8Gsm.png" alt="Homelab Steps" height="50%" width="50%">
-<br />
-<img src="https://i.imgur.com/SYrC3Dq.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
-After saving the file changes, I restarted the forwarder so that the changes could apply: <br/><br />
-<img src="https://i.imgur.com/qPAiUbM.png" alt="Homelab Steps">
-<br />
-<br />
+For the next step, I ran this command in order to tell the forwarder where the information should be sent: <br/><br />
+<pre>
+/opt/splunkforwarder/bin/splunk add forward-server 10.1.96.5:9997  #Adds the Splunk Enterprise IP into the Splunk Forwarder Configuration
+</pre>
+<p align="center">
+<br /> 
+Next I created the inputs.conf file, similar to when I set the forwarder up on the Client and DC Virtual Machines, and added the following lines. Once the file was added, I restarted the Forwarder: <br/><br />
+<pre>
+vi /opt/splunkforwarder/etc/system/local/inputs.conf
+<br/>
+[monitor:///var/ossec/logs/alerts/alerts.json]         #Tells forwarder to send all data from this path to the Splunk Virtual Machine
+disabled = 0                    
+host = wazuh-server                                    #Set the event host equal to wazuh-server
+index = wazuh-alerts                                   #Set the index equal to wazuh-alerts
+sourcetype = wazuh-alerts                              #Set the sourcetype equal to wazuh-alerts
+<br/>
+/opt/splunkforwarder/bin/splunk restart                #Restarts the Splunk Forwarder to apply changes
+</pre>
+<p align="center">
 <br />
 Switching back to Splunk Enterprise, I confirmed that everything was set up right by searching up the wazuh-alerts index: <br/><br />
 <img src="https://i.imgur.com/WVohj3O.png" alt="Homelab Steps">
@@ -136,5 +139,5 @@ Finally, I saved the alert as Dooley-File-Change-FIM. I used the same settings t
 <br />
 <br />
 <br />
-This was all for setting up Wazuh. The project documentation is continued in the Suricata Steps: <br/><br />
-https://github.com/rdooley2/Homelab/blob/main/Suricata.md
+This was all for setting up Wazuh. The project documentation is continued in the cata Steps: <br/><br />
+https://github.com/rdooley2/Homelab/blob/main/cata.md
