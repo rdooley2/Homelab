@@ -139,5 +139,5 @@ Finally, I saved the alert as Dooley-File-Change-FIM. I used the same settings t
 <br />
 <br />
 <br />
-This was all for setting up Wazuh. The project documentation is continued in the cata Steps: <br/><br />
+This was all for setting up Wazuh. The project documentation is continued in the Suricata Steps: <br/><br />
 https://github.com/rdooley2/Homelab/blob/main/Suricata.md
