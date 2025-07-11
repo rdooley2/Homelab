@@ -59,8 +59,8 @@ The ports I added are as follows:
 <ul>
  <li>Port 22 - Enables SSH into any of the Virtual Machines</li>
  <li>Port 443 - This port needs to be enabled to access the Wazuh Dashboard</li>
- <li>Port 1514 - Wazuh uses this port for Agent enrollment</li>
- <li>Port 1515 - Wazuh Manager uses this port to recieve event data</li>
+ <li>Port 1514 - Wazuh Manager uses this port to recieve event data</li>
+ <li>Port 1515 - Wazuh uses this port for Agent enrollment</li>
  <li>Port 8000 - Splunk Entrprise uses this port to display its GUI</li>
  <li>Port 9997 - Splunk Universal Forwarder uses this port to send data to Splunk Enterprise</li>
 </ul>
