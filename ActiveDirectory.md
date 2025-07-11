@@ -125,10 +125,5 @@ After logging out, I was able to log back in using one of the users I had previo
 <br />
 <br />
 <br />
-The last thing I wanted to do was enable RDP for my user (rdooley) into the Client VM, as it will be important later. I did this by going into the remote desktop section of the settings and adding my username to the list of allowed users for RDP: <br/><br />
-<img src="https://i.imgur.com/7xdEgnh.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
 This was all for setting up Active Directory. The project documentation is continued in the Network Drive Steps: <br/><br />
 https://github.com/rdooley2/Homelab/blob/main/NetworkDrive.md
