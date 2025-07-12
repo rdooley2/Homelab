@@ -3,7 +3,7 @@ The next part of the project was to set up Suricata. In this part of the project
 <img src="https://i.imgur.com/z3Ks5Ah.png" alt="Homelab Steps">
 <img src="https://i.imgur.com/mOszwI6.png" alt="Homelab Steps">
 <img src="https://i.imgur.com/ChiqkAw.png" alt="Homelab Steps">
-<img src="https://i.imgur.com/IhWGrp2.png" alt="Homelab Steps">
+<img src="https://i.imgur.com/QJFnLZy.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
@@ -32,7 +32,7 @@ ufw default allow outgoing           #Set default policy to deny all outbound tr
 <br />
 ufw allow from <My_IP> to any port 22 proto tcp         #Allow SSH from my IP to Splunk
 ufw allow from 10.1.96.0/20 to any port 443 proto tcp   #Allows HTTP from any of the Private IPs to the Wazuh Dashboard 
-ufw allow from 45.63.6.100 to any port 1514 proto tcp   #Allows Wazuh Dashboard to communicate with Wazuh Agents
+ufw allow from 10.1.96.0/20 to any port 1514 proto tcp   #Allows Wazuh Dashboard to communicate with Wazuh Agents
 ufw allow from 10.1.96.0/20 to any port 9997 proto tcp  #Allows Splunk Forwarder to send data to Splunk Enterprise
 <br />
 ufw enable                   #Enables ufw
