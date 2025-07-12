@@ -174,4 +174,5 @@ Finally, I saved this query as an alert with the same settings as the other two 
 <br />
 <br />
 <br />
-This was all for setting up Suricata. The project documentation is continued in the Shuffle/Slack Steps: <br/><br />
+This was all for setting up Suricata. The project documentation is continued in the Shuffle & Slack Steps: <br/><br />
+https://github.com/rdooley2/Homelab/blob/main/Shuffle%26Slack.md
