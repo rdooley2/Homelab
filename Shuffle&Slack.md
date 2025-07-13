@@ -1,5 +1,5 @@
 <p align="center">
-The final part of the project revolved around alert automation in Shuffle and Slack. My plan was that whenever an alert triggered, the three from previous steps, a message would be sent out in Slack. This would simulate automation and what you might see in a work enviornment. First, I navigated to Shuffle and created an account. When brought to the home page, I clicked create workflow:<br/><br />
+The last technical part of the project revolved around alert automation in Shuffle and Slack. My plan was that whenever an alert triggered, the three from previous steps, a message would be sent out in Slack. This would simulate automation and what you might see in a work enviornment. First, I navigated to Shuffle and created an account. When brought to the home page, I clicked create workflow:<br/><br />
 <img src="https://i.imgur.com/pIznaqL.png" alt="Homelab Steps">
 <br />
 <br />
@@ -79,4 +79,5 @@ Finally, here are the results in the Slack alerts channel:<br/><br />
 <br />
 <br />
 <br />
-Thanks for reading this far! This is the end of the project. This was the most challenging but rewarding project that I have ever taken on. I learned a lot and I hope you were able to as well!
+This was all for setting up automation in Shuffle and Slack. The project documentation is continued in the Dashboard Steps: <br/><br />
+https://github.com/rdooley2/Homelab/blob/main/Dashboard.md
