@@ -55,7 +55,7 @@ Finally, here is the table I generated for detected scans using the alert from b
 <br />
 <br />
 <br />
-Navigating back to the dashboard, I could see the three visualizations. I have also included the JSON file for the dashboard in this repository:<br/><br />
+Navigating back to the dashboard, I could see the three visualizations. I have also included the text file with the code for the dashboard in this repository:<br/><br />
 <img src="https://i.imgur.com/1k7gqy8.png" alt="Homelab Steps">
 <br />
 <br />
