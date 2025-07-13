@@ -1,0 +1,543 @@
+{
+    "title": "Homelab-Dashboard",
+    "inputs": {
+        "input_global_trp": {
+            "options": {
+                "defaultValue": "-60m@m,now",
+                "token": "global_time"
+            },
+            "title": "Global Time Range",
+            "type": "input.timerange"
+        }
+    },
+    "defaults": {
+        "dataSources": {
+            "ds.search": {
+                "options": {
+                    "queryParameters": {
+                        "earliest": "$global_time.earliest$",
+                        "latest": "$global_time.latest$"
+                    }
+                }
+            }
+        }
+    },
+    "visualizations": {
+        "viz_3V3AvVY4": {
+            "dataSources": {
+                "primary": "ds_oyvgAG73"
+            },
+            "options": {
+                "majorColor": "#db566f"
+            },
+            "title": "Critical Severity Alerts",
+            "type": "splunk.singlevalueradial"
+        },
+        "viz_4QSVuglC": {
+            "dataSources": {
+                "primary": "ds_D0hAYmXA"
+            },
+            "options": {
+                "majorColor": "#007d73"
+            },
+            "title": "Medium Severity Alerts",
+            "type": "splunk.singlevalueradial"
+        },
+        "viz_DI7fpctI": {
+            "dataSources": {
+                "primary": "ds_EmDJmxMO"
+            },
+            "title": "Top Mitre ATT&K tactics",
+            "type": "splunk.pie"
+        },
+        "viz_JAuJLgQI": {
+            "dataSources": {
+                "primary": "ds_WX9IJn8E"
+            },
+            "options": {
+                "count": 20,
+                "dataOverlayMode": "none",
+                "drilldown": "none",
+                "showInternalFields": false,
+                "showRowNumbers": false
+            },
+            "title": "Recently Detected File Changes",
+            "type": "splunk.table"
+        },
+        "viz_R8LMR6U6": {
+            "dataSources": {
+                "primary": "ds_d8m0U7Ph"
+            },
+            "options": {
+                "majorColor": "#bf0561"
+            },
+            "title": "Authentication failure",
+            "type": "splunk.singlevalueradial"
+        },
+        "viz_VI9ZdnSO": {
+            "dataSources": {
+                "primary": "ds_1KrtDz29"
+            },
+            "options": {
+                "majorColor": "#232323"
+            },
+            "title": "Low Severity Alerts",
+            "type": "splunk.singlevalueradial"
+        },
+        "viz_XlLyYDmC": {
+            "dataSources": {
+                "primary": "ds_DljIxEDR"
+            },
+            "options": {
+                "stackMode": "stacked",
+                "xAxisTitleText": "timestamp",
+                "yAxisTitleText": "count"
+            },
+            "title": "Alert severity",
+            "type": "splunk.area"
+        },
+        "viz_Y07WmZ1b": {
+            "dataSources": {
+                "primary": "ds_ut2DiVW9"
+            },
+            "title": "Security alerts",
+            "type": "splunk.table"
+        },
+        "viz_aTlMnG7A": {
+            "dataSources": {
+                "primary": "ds_ZPT4uVoe"
+            },
+            "options": {
+                "majorColor": "#db566f"
+            },
+            "title": "Level 12 or above alerts",
+            "type": "splunk.singlevalueradial"
+        },
+        "viz_cmEIbZ9q": {
+            "dataSources": {
+                "primary": "ds_TVyYlSRA"
+            },
+            "options": {
+                "majorColor": "#0258a1"
+            },
+            "title": "Hight Severity Alerts",
+            "type": "splunk.singlevalueradial"
+        },
+        "viz_nDMI4ZGW": {
+            "dataSources": {
+                "primary": "ds_7FDRhb5m"
+            },
+            "options": {
+                "majorColor": "#007d73"
+            },
+            "title": "Authentication success",
+            "type": "splunk.singlevalueradial"
+        },
+        "viz_oAPKLE0R": {
+            "dataSources": {
+                "primary": "ds_TdanKF0I"
+            },
+            "options": {
+                "stackMode": "stacked",
+                "xAxisTitleText": "timestamp",
+                "yAxisTitleText": "Count"
+            },
+            "title": "Alerts evolution - Top 5 agents",
+            "type": "splunk.column"
+        },
+        "viz_pdyiapKN": {
+            "dataSources": {
+                "primary": "ds_0G6cqToZ"
+            },
+            "options": {
+                "count": 20,
+                "dataOverlayMode": "none",
+                "drilldown": "none",
+                "showInternalFields": false,
+                "showRowNumbers": false
+            },
+            "title": "Recently Detected Scans",
+            "type": "splunk.table"
+        },
+        "viz_qYCIuSjF": {
+            "dataSources": {
+                "primary": "ds_d9cN1Qn9"
+            },
+            "options": {
+                "majorColor": "#0258a1"
+            },
+            "title": "Total",
+            "type": "splunk.singlevalueradial"
+        },
+        "viz_qzFw5Wx7": {
+            "dataSources": {
+                "primary": "ds_Irx4cEkl"
+            },
+            "options": {},
+            "type": "splunk.table"
+        },
+        "viz_wClulj7l": {
+            "dataSources": {
+                "primary": "ds_hICCAaEL"
+            },
+            "options": {
+                "dataValuesDisplay": "off",
+                "legendDisplay": "right",
+                "legendTruncation": "ellipsisMiddle",
+                "showIndependentYRanges": false,
+                "showOverlayY2Axis": false,
+                "showRoundedY2AxisLabels": false,
+                "showSplitSeries": false,
+                "showY2MajorGridLines": true,
+                "stackMode": "auto",
+                "xAxisLabelRotation": 0,
+                "xAxisTitleVisibility": "show",
+                "y2AxisAbbreviation": "auto",
+                "y2AxisScale": "linear",
+                "y2AxisTitleVisibility": "show",
+                "yAxisAbbreviation": "auto",
+                "yAxisScale": "linear",
+                "yAxisTitleVisibility": "show"
+            },
+            "title": "Recent Failed Logons",
+            "type": "splunk.column"
+        }
+    },
+    "dataSources": {
+        "ds_0G6cqToZ": {
+            "name": "Search_1",
+            "options": {
+                "query": "index=\"wazuh-alerts\" location=\"/var/log/suricata/eve.json\" \"ET SCAN\"\r\n| table _time, host, data.alert.signature, data.src_ip, data.dest_ip, data.alert.severity\r\n| sort -_time"
+            },
+            "type": "ds.search"
+        },
+        "ds_1KrtDz29": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" \"data.vulnerability.severity\"=\"Low\" | stats count by \"data.vulnerability.severity\"",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_7FDRhb5m": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" \"rule.groups{}\"=authentication_success | stats count",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_D0hAYmXA": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" \"data.vulnerability.severity\"=\"Medium\" | stats count by \"data.vulnerability.severity\"",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_DljIxEDR": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" | timechart count by data.vulnerability.severity useother=false usenull=false",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_EmDJmxMO": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" | top limit=5 agent.name | chart count by agent.name",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_Irx4cEkl": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" \"agent.name\"=\"*\", \"data.vulnerability.cve\"=\"*\", \"data.vulnerability.package.name\"=\"*\", \"data.vulnerability.package.version\"=\"*\", \"data.vulnerability.severity\"=\"*\", \"rule.id\"=\"*\" | table _time, agent.name, data.vulnerability.cve, data.vulnerability.package.name, data.vulnerability.package.version, data.vulnerability.severity, rule.id",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_TVyYlSRA": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" \"data.vulnerability.severity\"=\"High\" | stats count by \"data.vulnerability.severity\"",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_TdanKF0I": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" | timechart count by agent.name",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_WX9IJn8E": {
+            "name": "Recently Detected File Changes search",
+            "options": {
+                "ref": "Dooley-File-Change-FIM"
+            },
+            "type": "ds.savedSearch"
+        },
+        "ds_ZPT4uVoe": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" rule.level>=12 | stats count",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_d8m0U7Ph": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" \"rule.groups{}\"=\"authentication_failed\" OR \"rule.groups{}\"=\"win_authentication_failed\" OR \"rule.groups{}\"=\"authentication_failures\" | stats count",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_d9cN1Qn9": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" | stats count",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_hICCAaEL": {
+            "name": "Recent Failed Logons search",
+            "options": {
+                "query": "index=\"dooley-ad\" EventCode=4625\r\n| stats count by Account_Name\r\n| sort -count",
+                "queryParameters": {
+                    "earliest": "-24h@h",
+                    "latest": "now"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_oyvgAG73": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" \"data.vulnerability.severity\"=\"Critical\" | stats count by \"data.vulnerability.severity\"",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        },
+        "ds_ut2DiVW9": {
+            "options": {
+                "query": "index=\"wazuh-alerts\" \"rule.mitre.id{}\"=\"*\" | table _time, agent.name, rule.mitre.id{}, rule.mitre.tactic{}, rule.description, rule.level, rule.id",
+                "queryParameters": {
+                    "earliest": "$global_time.earliest$",
+                    "latest": "$global_time.latest$"
+                }
+            },
+            "type": "ds.search"
+        }
+    },
+    "layout": {
+        "globalInputs": [
+            "input_global_trp"
+        ],
+        "layoutDefinitions": {
+            "layout_1": {
+                "structure": [
+                    {
+                        "item": "viz_qYCIuSjF",
+                        "position": {
+                            "h": 131,
+                            "w": 291,
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_aTlMnG7A",
+                        "position": {
+                            "h": 131,
+                            "w": 291,
+                            "x": 291,
+                            "y": 0
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_R8LMR6U6",
+                        "position": {
+                            "h": 131,
+                            "w": 291,
+                            "x": 582,
+                            "y": 0
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_nDMI4ZGW",
+                        "position": {
+                            "h": 131,
+                            "w": 291,
+                            "x": 873,
+                            "y": 0
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_oAPKLE0R",
+                        "position": {
+                            "h": 250,
+                            "w": 700,
+                            "x": 0,
+                            "y": 131
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_DI7fpctI",
+                        "position": {
+                            "h": 250,
+                            "w": 464,
+                            "x": 700,
+                            "y": 131
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_Y07WmZ1b",
+                        "position": {
+                            "h": 284,
+                            "w": 1164,
+                            "x": 0,
+                            "y": 381
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_3V3AvVY4",
+                        "position": {
+                            "h": 131,
+                            "w": 291,
+                            "x": 0,
+                            "y": 665
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_cmEIbZ9q",
+                        "position": {
+                            "h": 131,
+                            "w": 291,
+                            "x": 291,
+                            "y": 665
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_4QSVuglC",
+                        "position": {
+                            "h": 131,
+                            "w": 291,
+                            "x": 582,
+                            "y": 665
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_VI9ZdnSO",
+                        "position": {
+                            "h": 131,
+                            "w": 291,
+                            "x": 873,
+                            "y": 665
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_XlLyYDmC",
+                        "position": {
+                            "h": 284,
+                            "w": 1164,
+                            "x": 0,
+                            "y": 796
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_qzFw5Wx7",
+                        "position": {
+                            "h": 284,
+                            "w": 1164,
+                            "x": 0,
+                            "y": 1080
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_wClulj7l",
+                        "position": {
+                            "h": 300,
+                            "w": 1164,
+                            "x": 0,
+                            "y": 1364
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_JAuJLgQI",
+                        "position": {
+                            "h": 300,
+                            "w": 1164,
+                            "x": 0,
+                            "y": 1664
+                        },
+                        "type": "block"
+                    },
+                    {
+                        "item": "viz_pdyiapKN",
+                        "position": {
+                            "h": 300,
+                            "w": 1164,
+                            "x": 0,
+                            "y": 1964
+                        },
+                        "type": "block"
+                    }
+                ],
+                "type": "grid"
+            }
+        },
+        "tabs": {
+            "items": [
+                {
+                    "label": "New tab",
+                    "layoutId": "layout_1"
+                }
+            ]
+        }
+    }
+}
