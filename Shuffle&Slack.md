@@ -40,7 +40,7 @@ In Shuffle, I created a new channel and named it alerts. All automated alerts wo
 <br />
 <br />
 Back in Shuffle, I pasted over the channel ID. I also went ahead and connected the webhook to the Slack block. This essentially makes it so that when the webhook recieves event data, it will then send out an event through Slack using that data:<br/><br />
-<img src="https://i.imgur.com/1YZC7rm.png" alt="Homelab Steps">
+<img src="https://i.imgur.com/pq4coGR.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
@@ -69,7 +69,7 @@ I repeated this process for the other two alerts and my workflow ended up lookin
 <br />
 <br />
 <br />
-Finally, here are the results in the Slack alerts channel (You may notice the pfp and name are different in this screenshot because I changed them) :<br/><br />
+Finally, here are the results in the Slack alerts channel:<br/><br />
 <img src="https://i.imgur.com/CJfq6Ev.png" alt="Homelab Steps">
 <br />
 <br />
