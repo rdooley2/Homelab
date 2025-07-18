@@ -25,7 +25,7 @@ Next I went into Slack and created a new account. After doing so, I created a ne
 <br />
 <br />
 Once naming the chat and running through all of the welcome prompts, I was greeted with my new Slack Channel:<br/><br />
-<img src="https://i.imgur.com/7iEcKlc.png" alt="Homelab Steps">
+<img src="https://i.imgur.com/MTLrogN.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
@@ -35,7 +35,7 @@ Back in the Shuffle workflow, I dragged the Slack app over to begin setting up t
 <br />
 <br />
 In Shuffle, I created a new channel and named it alerts. All automated alerts would be sent out in this channel. After doing so, I grabbed the channel ID from the URL:<br/><br />
-<img src="https://i.imgur.com/4Vxrjq1.png" alt="Homelab Steps">
+<img src="https://i.imgur.com/q3MSbgt.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
@@ -44,38 +44,33 @@ Back in Shuffle, I pasted over the channel ID. I also went ahead and connected t
 <br />
 <br />
 <br />
-Writing the text:<br/><br />
-<img src="" alt="Homelab Steps">
-<br />
-<br />
-<br />
-With all of that done, I needed to enable the alert in Splunk Enterprise:<br/><br />
+With all of that done, I needed to enable the alert in Splunk Enterprise. To create the automated text in Shuffle, I first would need to ensure that alert data was being sent to Shuffle:<br/><br />
 <img src="https://i.imgur.com/uKSCYse.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
 In the Client, I quickly added a new file in the downloads folder and navigated back to Splunk Enterprise to ensure that the alert was triggering:<br/><br />
-<img src="" alt="Homelab Steps">
+<img src="https://i.imgur.com/067PMBo.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
 Within the Workflow runs section, I was able to confirm that Shuffle was recieving the data and sending alerts through Slack:<br/><br />
-<img src="" alt="Homelab Steps">
+<img src="https://i.imgur.com/qcY7Ouu.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-Checking in Slack, I was able to confirm again that everything was working as intended:<br/><br />
-<img src="" alt="Homelab Steps">
+Next I needed to write the message in Shuffle using the data from Splunk Enterprise. For this alert, I displayed the user, machine, and time of alert:<br/><br />
+<img src="https://i.imgur.com/ffFp8LC.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
 I repeated this process for the other two alerts and my workflow ended up looking like this:<br/><br />
-<img src="" alt="Homelab Steps">
+<img src="https://i.imgur.com/b5ScN4n.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-Finally, here are the results in the Slack alerts channel:<br/><br />
-<img src="" alt="Homelab Steps">
+Finally, here are the results in the Slack alerts channel (You may notice the pfp and name are different in this screenshot because I changed them) :<br/><br />
+<img src="https://i.imgur.com/CJfq6Ev.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
