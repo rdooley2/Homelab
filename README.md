@@ -35,6 +35,7 @@ In this project, I used Vultr to create multiple Virtual Machines and set up a h
 
 <h2>Project Index</h2>
 
+- <b>[Virtual Machine Steps](https://github.com/rdooley2/Homelab/blob/main/README.md)</b>
 - <b>[Active Directory Steps](https://github.com/rdooley2/Homelab/blob/main/ActiveDirectory.md)</b>
 - <b>[Network Drive Steps](https://github.com/rdooley2/Homelab/blob/main/NetworkDrive.md)</b>
 - <b>[Splunk Steps](https://github.com/rdooley2/Homelab/blob/main/Splunk.md)</b>
@@ -43,7 +44,7 @@ In this project, I used Vultr to create multiple Virtual Machines and set up a h
 - <b>[Shuffle & Slack Steps](https://github.com/rdooley2/Homelab/blob/main/Shuffle&Slack.md)</b>
 - <b>[Dashboard Steps](https://github.com/rdooley2/Homelab/blob/main/Dashboard.md)</b>
 
-<h2>Virtual Machine Initialization:</h2>
+<h2>Virtual Machine Steps:</h2>
 
 <p align="center">
 To start the project, I took time to research and design a Network Map. Here is what I came up with: <br/><br />
