@@ -29,6 +29,12 @@ In this project, I used Vultr to create multiple Virtual Machines and set up a h
 
 <h2>Environments Used </h2>
 
+- <b>Vultr</b>
+- <b>Shuffle</b>
+- <b>Slack</b>
+
+<h2>Project Index</h2>
+
 - <b>[Active Directory Steps](https://github.com/rdooley2/Homelab/blob/main/ActiveDirectory.md)</b>
 - <b>[Network Drive Steps](https://github.com/rdooley2/Homelab/blob/main/NetworkDrive.md)</b>
 - <b>[Splunk Steps](https://github.com/rdooley2/Homelab/blob/main/Splunk.md)</b>
@@ -36,12 +42,6 @@ In this project, I used Vultr to create multiple Virtual Machines and set up a h
 - <b>[Suricata Steps](https://github.com/rdooley2/Homelab/blob/main/Suricata.md)</b>
 - <b>[Shuffle & Slack Steps](https://github.com/rdooley2/Homelab/blob/main/Shuffle&Slack.md)</b>
 - <b>[Dashboard Steps](https://github.com/rdooley2/Homelab/blob/main/Dashboard.md)</b>
-
-<h2>Project Index</h2>
-
-- <b>Vultr</b>
-- <b>Shuffle</b>
-- <b>Slack</b>
 
 <h2>Project walk-through:</h2>
 
