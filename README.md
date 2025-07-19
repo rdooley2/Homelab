@@ -2,30 +2,41 @@
 
 
 <h2>Overview</h2>
-I used Vultr to create my own Homelab and simulate attacks. This project aimed to achieve the following goals:
+I used Vultr to create my own Homelab and simulated attacks to test the software. This project aimed to develop my skills in the following areas and softwares:
 <br><br>
 <ul>
- <li></li>
- <li></li>
- <li></li>
- <li></li>
+ <li>Active Directory - Windows Server</li>
+ <li>Setting up Network Drives - Windows Server/Active Directory</li>
+ <li>Firewall Setup/Configuration- Vultr</li>
+ <li>Network-Based Intrusion Detection System (NIDS)/Network-Based Intrusion Prevention System (NIPS) - Suricata</li>
+ <li>Extended Detection and Response (XDR) - Wazuh</li>
+ <li>Vulnerability Detection - Wazuh</li>
+ <li>File Integrity Monitoring (FIM) - Wazuh</li>
+ <li>Security Information and Event Management (SIEM) - Splunk</li>
+ <li>Security Orchestration, Automation, and Response (SOAR) - Slack/Shuffle</li>
 </ul>
 
 <h2>Summary</h2>
+In this project, I used Vultr to create multiple Virtual Machines and set up a homelab. Each VM was configured with different softwares, allowing for multiple features and protections. First, I setup the Domain Controller and Client VMs with multiple users, groups, and organizational units. Second, I setup Network Drives for each user and group for file sharing. Third, I setup Splunk to work on the third VM and installed Splunk Forwarders on the DC, Client, and Wazuh VMs to forward Security Events/Alerts. Fourth, I installed Wazuh on the fourth VM and installed the Wazuh agent on the Client and Suricata VMs, to ingest logs that would eventually be sent to Splunk. Fifth, I setup Suricata on the fifth VM and configured it to send logs to the Wazuh VM. Finally, I setup alert automation with Shuffle so when alerts triggered, a text would be sent in Slack to simulate a work environment.
 
 
 <h2>Languages and Utilities Used</h2>
 
-- <b></b>
+- <b>Active Directory</b>
+- <b>Splunk</b>
+- <b>Wazuh</b>
+- <b>Suricata</b>
 
 <h2>Environments Used </h2>
 
-- <b></b>
+- <b>Vultr</b>
+- <b>Shuffle</b>
+- <b>Slack</b>
 
 <h2>Project walk-through:</h2>
 
 <p align="center">
-: <br/><br />
+To start the project, I took time to research and design a Network Map. Here is what I came up with: <br/><br />
 <img src="https://i.imgur.com/Byrxdd4.png" alt="Homelab Steps">
 <br />
 <br />
