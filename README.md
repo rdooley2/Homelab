@@ -1,4 +1,4 @@
-<h1>Homelab</h1>
+<h1>Virtual Homelab</h1>
 
 ***This documentation is best viewed in a web browser at 125% zoom to fully view screenshots***
 
