@@ -29,15 +29,15 @@ I then grabbed the command to download the Linux .deb version: <br/><br />
 <br /> 
 Then I used SSH to get into the Splunk VM and used the command from before. I then used the depackage command to depackage the installer: <br/><br />
 <pre>
-wget -O splunk-9.4.3-237ebbd22314-linux-amd64.deb "https://download.splunk.com/products/splunk/releases/9.4.3/linux/splunk-9.4.3-237ebbd22314-linux-amd64.deb"
-dpkg -i splunk-9.4.3-237ebbd22314-linux-amd64.deb
+wget -O splunk-9.4.3-237ebbd22314-linux-amd64.deb "https://download.splunk.com/products/splunk/releases/9.4.3/linux/splunk-9.4.3-237ebbd22314-linux-amd64.deb"     #Download the Forwarder
+dpkg -i splunk-9.4.3-237ebbd22314-linux-amd64.deb                                                                                                                  #Depackage the Forwarder
 </pre>
 <br />
 <p align="center">
 Next, I went into the /opt/splunk/bin folder and ran the Splunk script: <br/><br />
 <pre>
-cd /opt/splunk/bin
-./splunk start
+cd /opt/splunk/bin   #Navigate to Splunk script
+./splunk start       #Start installation
 </pre>
 <br />
 <p align="center">
