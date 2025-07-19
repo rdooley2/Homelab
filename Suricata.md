@@ -1,5 +1,17 @@
+<h2>Project Index</h2>
+
+- <b>[Virtual Machine Steps](https://github.com/rdooley2/Homelab/blob/main/README.md)</b>
+- <b>[Active Directory Steps](https://github.com/rdooley2/Homelab/blob/main/ActiveDirectory.md)</b>
+- <b>[Network Drive Steps](https://github.com/rdooley2/Homelab/blob/main/NetworkDrive.md)</b>
+- <b>[Splunk Steps](https://github.com/rdooley2/Homelab/blob/main/Splunk.md)</b>
+- <b>[Wazuh Steps](https://github.com/rdooley2/Homelab/blob/main/Wazuh.md)</b>
+- <b>[Suricata Steps](https://github.com/rdooley2/Homelab/blob/main/Suricata.md)</b>
+- <b>[Shuffle & Slack Steps](https://github.com/rdooley2/Homelab/blob/main/Shuffle&Slack.md)</b>
+- <b>[Dashboard Steps](https://github.com/rdooley2/Homelab/blob/main/Dashboard.md)</b><br>
+
+<h2>Suricata Steps</h2>
 <p align="center">
-The next part of the project was to set up Suricata. In this part of the project, I focused on securing the network. First I went ahead and made specific firewalls for each Virtual Machine (except the Suricata VM) since I knew everything worked so far. Here are those firewalls:<br/><br />
+The next part of the project was to set up Suricata. In this part of the project, I focused on securing the network. First, I went ahead and made specific firewalls for each Virtual Machine (except the Suricata VM) since I knew everything worked so far. Here are those firewalls:<br/><br />
 <img src="https://i.imgur.com/z3Ks5Ah.png" alt="Homelab Steps">
 <img src="https://i.imgur.com/YmPdp8l.png" alt="Homelab Steps">
 <img src="https://i.imgur.com/mPqyeo7.png" alt="Homelab Steps">
@@ -30,12 +42,12 @@ ufw reset                            #Resets ufw back to default
 ufw default deny incoming            #Set default policy to deny all inbound traffic
 ufw default allow outgoing           #Set default policy to deny all outbound traffic
 <br />
-ufw allow from <My_IP> to any port 22 proto tcp         #Allow SSH from my IP to Splunk
-ufw allow from 10.1.96.0/20 to any port 443 proto tcp   #Allows HTTP from any of the Private IPs to the Wazuh Dashboard 
-ufw allow from 10.1.96.0/20 to any port 1514 proto tcp   #Allows Wazuh Dashboard to communicate with Wazuh Agents
-ufw allow from 10.1.96.0/20 to any port 9997 proto tcp  #Allows Splunk Forwarder to send data to Splunk Enterprise
+ufw allow from My_IP to any port 22 proto tcp             #Allow SSH from my IP to Splunk
+ufw allow from 10.1.96.0/20 to any port 443 proto tcp     #Allows HTTP from any of the Private IPs to the Wazuh Dashboard 
+ufw allow from 10.1.96.0/20 to any port 1514 proto tcp    #Allows Wazuh Dashboard to communicate with Wazuh Agents
+ufw allow from 10.1.96.0/20 to any port 9997 proto tcp    #Allows Splunk Forwarder to send data to Splunk Enterprise
 <br />
-ufw enable                   #Enables ufw
+ufw enable                                                #Enables ufw
 </pre>
 <p align="center">
 I also wanted to disable the public IPs for the Virtual Machines that didn't need them (Wazuh, DC, and Client). Since they only need to communicate with each other, I went ahead and started that process. While I was in the Wazuh VM, I went ahead and ran this command to disable the Public Network Interface:
@@ -49,7 +61,7 @@ Switching over to the Client, I went to network status and changed the default g
 <br />
 <br />
 <br />
-Additionally, I disabled IPv4 completely within the settings of the public ethernet instance. This means the only inbound traffic the Client recieves is in response to a previous outbound request. Additionally, it forces all outbound traffic to run through the Suricata VM before reaching its destination. This way, all traffic can be monitored by Suricata. I repeated this process for the DC VM: <br/><br />
+Additionally, I disabled IPv4 completely within the settings of the public Ethernet instance. This means the only inbound traffic the Client receives is in response to a previous outbound request. Additionally, it forces all outbound traffic to run through the Suricata VM before reaching its destination. This way, all traffic can be monitored by Suricata. I repeated this process for the DC VM: <br/><br />
 <img src="https://i.imgur.com/CN5knZr.png" alt="Homelab Steps">
 <br />
 <br />
@@ -62,7 +74,7 @@ Uncomment "net.ipv4.ip_forward = 1" line                #This variable allows IP
 sysctl -p                                               #Restart to apply changes           
 </pre>
 <br />
-Next, I needed to know the network interfaces in order to correctly set up the IP forwarding. I ran this command to find which interface cooresponded to each IP: <br/><br />
+Next, I needed to know the network interfaces to correctly set up the IP forwarding. I ran this command to find which interface corresponded to each IP: <br/><br />
 <pre>
 ip a
 </pre>
@@ -70,12 +82,12 @@ ip a
 <p align="center">
 Using the interfaces I found, I ran these commands to correctly configure the IP tables. These tables are responsible for controlling network traffic on the VM:
 <pre>
-iptables -t nat -A POSTROUTING -o enp1s0 -j MASQUERADE        #Hide Private IP (enp8s0) requests behind the Public IP counterpart (enp1s0)
-iptables -A FORWARD -i enp8s0 -o enp1s0 -j ACCEPT                                                                  #Allow outbound traffic
-iptables -A FORWARD -i enp1s0 -o enp8s0 -m state --state RELATED,ESTABLISHED -j ACCEPT                              #Allow inbound traffic
+iptables -t nat -A POSTROUTING -o enp1s0 -j MASQUERADE                                              #Hide Private IP (enp8s0) requests behind the Public IP counterpart (enp1s0)
+iptables -A FORWARD -i enp8s0 -o enp1s0 -j ACCEPT                                                   #Allow outbound traffic
+iptables -A FORWARD -i enp1s0 -o enp8s0 -m state --state RELATED,ESTABLISHED -j ACCEPT              #Allow inbound traffic
 </pre>
 <p align="center">
-For these changes to apply after restart, I ran these commands to download a module to save the changes:
+For these changes to apply after a restart, I ran these commands to download a module to save the changes:
 <pre>
 sudo apt install iptables-persistent 
 sudo netfilter-persistent save 
@@ -91,8 +103,8 @@ To test these changes, I ran the trace route command in the Client CLI. The resu
 <p align="center">
 Going back to the Suricata VM, the next step was to download the Wazuh agent and configure it. These commands come straight from their Linux agent installation guide:
 <pre>
-curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import && chmod 644 /usr/share/keyrings/wazuh.gpg         #Installs the GPG key
-echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list                                          #Adds the Wazuh Repository
+curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import && chmod 644 /usr/share/keyrings/wazuh.gpg       #Installs the GPG key
+echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list                                             #Adds the Wazuh Repository
 apt-get update
 WAZUH_MANAGER="10.1.96.6" apt-get install wazuh-agent               #Installs the agent
 systemctl daemon-reload                                             #Reloads daemon to apply changes 
@@ -131,12 +143,12 @@ HOME_NET: "[207.148.16.92/23]"                  #Set HOME_NET equal to the Suric
   
 EXTERNAL_NET: "any"
   
-default-rule-path: /etc/suricata/rules          #Specify new rule path I created in previous step
+default-rule-path: /etc/suricata/rules          #Specify new rule path I created in the previous step
 rule-files:
   "*.rules"                                     #Load all rules within the specified path
 
 af-packet:
-  interface: enp1s0                             #Set interface to one that correalates with public IP
+  interface: enp1s0                             #Set interface to one that correlates with public IP
 
 systemctl restart suricata                      #Restart Suricata
 </pre>
