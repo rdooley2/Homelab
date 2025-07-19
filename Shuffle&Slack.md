@@ -1,5 +1,17 @@
+<h2>Project Index</h2>
+
+- <b>[Virtual Machine Steps](https://github.com/rdooley2/Homelab/blob/main/README.md)</b>
+- <b>[Active Directory Steps](https://github.com/rdooley2/Homelab/blob/main/ActiveDirectory.md)</b>
+- <b>[Network Drive Steps](https://github.com/rdooley2/Homelab/blob/main/NetworkDrive.md)</b>
+- <b>[Splunk Steps](https://github.com/rdooley2/Homelab/blob/main/Splunk.md)</b>
+- <b>[Wazuh Steps](https://github.com/rdooley2/Homelab/blob/main/Wazuh.md)</b>
+- <b>[Suricata Steps](https://github.com/rdooley2/Homelab/blob/main/Suricata.md)</b>
+- <b>[Shuffle & Slack Steps](https://github.com/rdooley2/Homelab/blob/main/Shuffle&Slack.md)</b>
+- <b>[Dashboard Steps](https://github.com/rdooley2/Homelab/blob/main/Dashboard.md)</b><br>
+
+<h2>Shuffle & Slack Steps</h2>
 <p align="center">
-The last technical part of the project revolved around alert automation in Shuffle and Slack. My plan was that whenever an alert triggered, the three from previous steps, a message would be sent out in Slack. This would simulate automation and what you might see in a work enviornment. First, I navigated to Shuffle and created an account. When brought to the home page, I clicked create workflow:<br/><br />
+The last technical part of the project revolved around alert automation in Shuffle and Slack. I planned that whenever one of the three alerts was triggered, a message would be sent out in Slack. This would simulate automation and what you might see in a work environment. First, I navigated to Shuffle and created an account. When brought to the home page, I clicked create workflow:<br/><br />
 <img src="https://i.imgur.com/pIznaqL.png" alt="Homelab Steps">
 <br />
 <br />
@@ -9,17 +21,17 @@ This workflow is where all of the automation happens. After naming the workflow,
 <br />
 <br />
 <br />
-Inside of Splunk Enterprise, I navigated to my alerts and edited the File Change Alert. Additionally, I had already come in and disabled all of the alerts beforehand, with the intention of enabling them once everything was set up correctly:<br/><br />
+Inside Splunk Enterprise, I navigated to my alerts and edited the File Change Alert. Additionally, I had already come in and disabled all of the alerts beforehand, to enable them once everything was set up correctly:<br/><br />
 <img src="https://i.imgur.com/xV99bU5.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-Once viewing the alert settings, I first enabled throttling. This prevents overwhelming the Shuffle server and getting rate-limited in the case that there is an event spike. Secondly, I added a webhook under the actions section and pasted in the URL from before. This link tells Splunk to send the alert JSON to Shuffle so that it can automate a response using the data:<br/><br />
+Once I viewed the alert settings, I first enabled throttling. This prevents overwhelming the Shuffle server and getting rate-limited in the case that there is an event spike. Secondly, I added a webhook under the actions section and pasted in the URL from before. This link tells Splunk to send the alert JSON to Shuffle so that it can automate a response using the data:<br/><br />
 <img src="https://i.imgur.com/ddF41ip.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-Next I went into Slack and created a new account. After doing so, I created a new workspace. This would help to simulate a work enviornment chat:<br/><br />
+Next, I went into Slack and created a new account. After doing so, I created a new workspace. This would help to simulate a work environment chat:<br/><br />
 <img src="https://i.imgur.com/H8sbR84.png" alt="Homelab Steps">
 <br />
 <br />
@@ -29,7 +41,7 @@ Once naming the chat and running through all of the welcome prompts, I was greet
 <br />
 <br />
 <br />
-Back in the Shuffle workflow, I dragged the Slack app over to begin setting up the actual alert. At this point I authenticated Slack by clicking authenticate underneath the name, but in this screenshot I had already done so:<br/><br />
+Back in the Shuffle workflow, I dragged the Slack app over to begin setting up the actual alert. At this point, I authenticated Slack by clicking authenticate underneath the name, but in this screenshot, I had already done so:<br/><br />
 <img src="https://i.imgur.com/W5ODe2T.png" alt="Homelab Steps">
 <br />
 <br />
@@ -39,7 +51,7 @@ In Shuffle, I created a new channel and named it alerts. All automated alerts wo
 <br />
 <br />
 <br />
-Back in Shuffle, I pasted over the channel ID. I also went ahead and connected the webhook to the Slack block. This essentially makes it so that when the webhook recieves event data, it will then send out an event through Slack using that data:<br/><br />
+Back in Shuffle, I pasted over the channel ID. I also went ahead and connected the webhook to the Slack block. This essentially makes it so that when the webhook receives event data, it will then send out an event through Slack using that data:<br/><br />
 <img src="https://i.imgur.com/pq4coGR.png" alt="Homelab Steps">
 <br />
 <br />
@@ -54,17 +66,17 @@ In the Client, I quickly added a new file in the downloads folder and navigated 
 <br />
 <br />
 <br />
-Within the Workflow runs section, I was able to confirm that Shuffle was recieving the data and sending alerts through Slack:<br/><br />
+Within the Workflow runs section, I was able to confirm that Shuffle was receiving the data and sending alerts through Slack:<br/><br />
 <img src="https://i.imgur.com/qcY7Ouu.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-Next I needed to write the message in Shuffle using the data from Splunk Enterprise. For this alert, I displayed the user, machine, and time of alert:<br/><br />
+Next, I needed to write the message in Shuffle using the data from Splunk Enterprise. For this alert, I displayed the user, machine, and time of alert:<br/><br />
 <img src="https://i.imgur.com/ffFp8LC.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-I repeated this process for the other two alerts and my workflow ended up looking like this:<br/><br />
+I repeated this process for the other two alerts, and my workflow ended up looking like this:<br/><br />
 <img src="https://i.imgur.com/b5ScN4n.png" alt="Homelab Steps">
 <br />
 <br />
