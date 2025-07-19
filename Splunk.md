@@ -1,50 +1,47 @@
+<h2>Project Index</h2>
+
+- <b>[Virtual Machine Steps](https://github.com/rdooley2/Homelab/blob/main/README.md)</b>
+- <b>[Active Directory Steps](https://github.com/rdooley2/Homelab/blob/main/ActiveDirectory.md)</b>
+- <b>[Network Drive Steps](https://github.com/rdooley2/Homelab/blob/main/NetworkDrive.md)</b>
+- <b>[Splunk Steps](https://github.com/rdooley2/Homelab/blob/main/Splunk.md)</b>
+- <b>[Wazuh Steps](https://github.com/rdooley2/Homelab/blob/main/Wazuh.md)</b>
+- <b>[Suricata Steps](https://github.com/rdooley2/Homelab/blob/main/Suricata.md)</b>
+- <b>[Shuffle & Slack Steps](https://github.com/rdooley2/Homelab/blob/main/Shuffle&Slack.md)</b>
+- <b>[Dashboard Steps](https://github.com/rdooley2/Homelab/blob/main/Dashboard.md)</b><br>
+
+<h2>Splunk Steps</h2>
 <p align="center">
-The next part of the project was to set up Splunk. First I used SSH to get into the Splunk VM. When first entering the VM I made sure to run apt update/upgrade to install new versions: <br/><br />
-<img src="https://i.imgur.com/RrK6FJt.png" alt="Homelab Steps">
+The next part of the project was to set up Splunk. First, I used SSH to get into the Splunk VM, and then I ran these commands to update packages. After the updates were installed, I rebooted the affected services: <br/><br />
+<pre>
+apt update && apt upgrade
+</pre>
 <br />
-<br />
-<br />
-Once the upgrades had installed, I had the services restart: <br/><br />
-<img src="https://i.imgur.com/UtubGhM.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
+<p align="center">
 Next, I navigated to the Splunk website and registered for an account. I then navigated to trials & downloads and clicked on Splunk Enterprise: <br/><br />
 <img src="https://i.imgur.com/gdw6mtk.png" alt="Homelab Steps">
 <br />
 <br />
-<br />
+<br /> 
 I then grabbed the command to download the Linux .deb version: <br/><br />
 <img src="https://i.imgur.com/ND0H6nl.png" alt="Homelab Steps">
 <br />
 <br />
+<br /> 
+Then I used SSH to get into the Splunk VM and used the command from before. I then used the depackage command to depackage the installer: <br/><br />
+<pre>
+wget -O splunk-9.4.3-237ebbd22314-linux-amd64.deb "https://download.splunk.com/products/splunk/releases/9.4.3/linux/splunk-9.4.3-237ebbd22314-linux-amd64.deb"
+dpkg -i splunk-9.4.3-237ebbd22314-linux-amd64.deb
+</pre>
 <br />
-Then I used SSH to get into the Splunk VM and used the command from before. I then used ls to ensure the package downloaded and used the depackage command to depackage the installer: <br/><br />
-<img src="https://i.imgur.com/b1L9RwL.png" alt="Homelab Steps">
+<p align="center">
+Next, I went into the /opt/splunk/bin folder and ran the Splunk script: <br/><br />
+<pre>
+cd /opt/splunk/bin
+./splunk start
+</pre>
 <br />
-<br />
-<br />
-Next, I went into the /opt/splunk/bin folder and found the script that I wanted to run (splunk): <br/><br />
-<img src="https://i.imgur.com/MhtwuRX.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
-Then I ran the Splunk script and clicked through all of the terms and conditions: <br/><br />
-<img src="https://i.imgur.com/aJ9Puje.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
-At the end, I set a administrator username and password: <br/><br />
-<img src="https://i.imgur.com/SXFMDdN.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
-Once everything had finished running, the script gave me the URL for the Splunk interface. However, I still had one more thing to set up before I could visit it: <br/><br />
-<img src="https://i.imgur.com/TWUXr81.png" alt="Homelab Steps">
-<br />
-<br />
-<br />
-I had to go in and set each port that I wanted to use as allowed for the firewall. These are the commands that I ran: <br/><br />
+<p align="center">
+Near the end of the installation, I set an administrator username and password. Once everything had finished running, the script gave me the URL for the Splunk interface. However, I still had one more thing to set up before I could visit it. I had to go in and set each port that I wanted to use, as allowed by the firewall. These are the commands that I ran: <br/><br />
 <pre>
 ufw allow 22
 ufw allow 1514
@@ -54,7 +51,7 @@ ufw allow 9997
 </pre>
 <p align="center">
 <br />
-When entering the Splunk IP address followed by :8000, I was able to access Splunk Enterprise. First I had to login using the username and password I had previously created: <br/><br />
+When entering the Splunk IP address followed by port 8000, I was able to access Splunk Enterprise. First, I had to log in using the username and password I had previously created: <br/><br />
 <img src="https://i.imgur.com/0fZSaBc.png" alt="Homelab Steps">
 <br />
 <br />
@@ -64,22 +61,22 @@ Now I was brought to the dashboard. The first thing I need to do is go into pref
 <br />
 <br />
 <br />
-In the preferences I went ahead and set the time zone since that was necessary: <br/><br />
+In the preferences, I went ahead and set the time zone since that was necessary: <br/><br />
 <img src="https://i.imgur.com/UJm5wXP.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-Next I wanted to install an app. I did this by first clicking on the app tab in the top left and then clicking find more apps: <br/><br />
+Next, I wanted to install an app. I did this by first clicking on the app tab in the top left and then clicking find more apps: <br/><br />
 <img src="https://i.imgur.com/dCHDxJi.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-Next, I searched up the app that I wanted, the app being Splunk Add-on for Microsoft Windows. This app will allow me to use many useful fields when I create alerts later on: <br/><br />
+Next, I searched for the app that I wanted, the app being Splunk Add-on for Microsoft Windows. This app will allow me to use many useful fields when I create alerts later on: <br/><br />
 <img src="https://i.imgur.com/5QC48ou.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-It then prompted me to login before installing. Once I did so I let it install and then closed out the prompt: <br/><br />
+It then prompted me to log in before installing. Once I did so, I let it install and then closed out the prompt: <br/><br />
 <img src="https://i.imgur.com/FTIgc9S.png" alt="Homelab Steps">
 <br />
 <br />
@@ -89,7 +86,7 @@ I then clicked settings, in the top right, and selected indexes: <br/><br />
 <br />
 <br />
 <br />
-Then I clicked new index and named it dooley-ad. This index will allow me to identify any event that comes from the Client and DC VMs: <br/><br />
+Then I clicked the new index and named it dooley-ad. This index will allow me to identify any event that comes from the Client and DC VMs: <br/><br />
 <img src="https://i.imgur.com/yybvY6a.png" alt="Homelab Steps">
 <br />
 <br />
@@ -99,12 +96,12 @@ Next, I clicked settings and selected forwarding and receiving: <br/><br />
 <br />
 <br />
 <br />
-From here, I clicked configure receiving. Setting up recieving will allow Splunk Enterprise to recieve the information from the othe VMs: <br/><br />
+From here, I clicked configure receiving. Setting up receiving will allow Splunk Enterprise to receive the information from the other VMs: <br/><br />
 <img src="https://i.imgur.com/Y5b3JXv.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-Then, I clicked new recieving port: <br/><br />
+Then, I clicked the new receiving port: <br/><br />
 <img src="https://i.imgur.com/zlIBwF6.png" alt="Homelab Steps">
 <br />
 <br />
@@ -124,7 +121,7 @@ Then I grabbed the download command for the Windows Server 2022 version: <br/><b
 <br />
 <br />
 <br />
-After switching over to the Client VM, I was able to paste the command in the command line. Once it installed, I ran the exe: <br/><br />
+After switching over to the Client VM, I was able to paste the command in the command line. Once it was installed, I ran the exe: <br/><br />
 <img src="https://i.imgur.com/2swd35N.png" alt="Homelab Steps">
 <br />
 <br />
@@ -139,12 +136,12 @@ Next, I set up a username and password for the administrator account: <br/><br /
 <br />
 <br />
 <br />
-I continued to click next until it asked me to set up the recieving IP. For this I just entered the Private IP of the Splunk VM on port 9997: <br/><br />
+I continued to click next until it asked me to set up the receiving IP. For this, I just entered the Private IP of the Splunk VM on port 9997: <br/><br />
 <img src="https://i.imgur.com/eb1Rjek.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-Once that was done I clicked install: <br/><br />
+Once that was done, I clicked install: <br/><br />
 <img src="https://i.imgur.com/YOxpSGG.png" alt="Homelab Steps">
 <br />
 <br />
@@ -159,7 +156,7 @@ After all of that, the installation was finished and I went ahead and clicked th
 <br />
 <br />
 <br />
-Next I had to configure a few things. I started by entering the C:/Program Files/SplunkUniversalForwarder/etc/system/default folder and copied the inputs.conf file: <br/><br />
+Next, I had to configure a few things. I started by entering the C:/Program Files/SplunkUniversalForwarder/etc/system/default folder and copying the inputs.conf file: <br/><br />
 <img src="https://i.imgur.com/Xh0wl1W.png" alt="Homelab Steps">
 <br />
 <br />
@@ -169,12 +166,12 @@ Then, I pasted the inputs.conf file into the C:/Program Files/SplunkUniversalFor
 <br />
 <br />
 <br />
-Next, I needed to edit the inputs.conf file that I had just created. I did so by running notepad as administrator: <br/><br />
+Next, I needed to edit the inputs of the conf file that I had just created. I did so by running Notepad as an administrator: <br/><br />
 <img src="https://i.imgur.com/crvWcMz.png" alt="Homelab Steps">
 <br />
 <br />
 <br />
-At the bottom of the file, I added these three lines. Essentially, these lines tell the forwarder to collect windows security events and file them under the dooley-ad index: <br/><br />
+At the bottom of the file, I added these three lines. Essentially, these lines tell the forwarder to collect Windows security events and file them under the dooley-ad index: <br/><br />
 <img src="https://i.imgur.com/V2iN5QJ.png" alt="Homelab Steps">
 <br />
 <br />
@@ -209,7 +206,7 @@ In addition, by clicking the ComputerName field in the left column, I could conf
 <br />
 <br />
 <br />
-Next, I wanted to craft an alert. Essentially, this alert looks within the dooley-ad index for event 4625 (Failed Logon) on the Client machine. The second line adjusts the event count by setting a range of five minutes. The third line displays the count, account name, and time of event. Finally, the last line determines how many times the event has to happen before being triggered. Basically, if someone unsuccessfully logs into their machine more than three times within five minutes, this will trigger an alert for suspicious activity: <br/><br />
+Next, I wanted to craft an alert. Essentially, this alert looks within the dooley-ad index for event 4625 (Failed Logon) on the Client machine. The second line adjusts the event count by setting a range of five minutes. The third line displays the count, account name, and time of event. Finally, the last line determines how many times the event has to happen before being triggered. If someone unsuccessfully logs into their machine more than three times within five minutes, this will trigger an alert for suspicious activity: <br/><br />
 <img src="https://i.imgur.com/345QJAZ.png" alt="Homelab Steps">
 <br />
 <br />
