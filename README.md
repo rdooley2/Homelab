@@ -1,5 +1,6 @@
 <h1>Homelab</h1>
 
+***This documentation is best viewed in a web browser at 125% zoom to fully view screenshots***
 
 <h2>Overview</h2>
 I used Vultr to create my own Homelab and simulated attacks to test the software. This project aimed to develop my skills in the following areas and software:
