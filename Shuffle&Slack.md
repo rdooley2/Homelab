@@ -81,7 +81,7 @@ I repeated this process for the other two alerts, and my workflow ended up looki
 <br />
 <br />
 <br />
-Finally, here are the results in the Slack alerts channel:<br/><br />
+Finally, here are the results in the Slack alerts channel after I simulated the conditions for the alerts to trigger:<br/><br />
 <img src="https://i.imgur.com/CJfq6Ev.png" alt="Homelab Steps">
 <br />
 <br />
